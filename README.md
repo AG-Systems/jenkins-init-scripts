@@ -1,6 +1,13 @@
 Jenkins Groovy Init Mixins
 --------------------------
 
-There is a distinct lack of documentation about how to initialize Jenkins from groovy.
+You can create a Groovy script file $JENKINS_HOME/init.groovy, or any .groovy file in the directory $JENKINS_HOME/init.groovy.d/
+`
+import jenkins.model.*;
 
-Maybe this will become a thing you want to contribute fixes/enhancements to.
+// start in the state that doesn't do any build.
+Jenkins.instance.doQuietDown();
+`
+
+
+
